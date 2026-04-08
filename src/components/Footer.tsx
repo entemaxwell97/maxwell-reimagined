@@ -1,16 +1,16 @@
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Facebook, Linkedin } from "lucide-react";
 import maxwellLogo from "@/assets/maxwell-logo.png";
 
 const Footer = () => {
   return (
-    <footer id="contatti" className="hero-gradient py-16 text-primary-foreground">
+    <footer className="hero-gradient py-16 text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
           <div>
             <img src={maxwellLogo} alt="Ente Maxwell" className="h-12 brightness-0 invert" />
             <p className="mt-4 text-sm leading-relaxed text-primary-foreground/70">
-              Ente di Formazione Professionale accreditato dalla Regione Campania. 
+              Ente di Formazione Professionale accreditato dalla Regione Campania.
               Dal 1990 formiamo professionisti qualificati.
             </p>
             <div className="mt-4 flex gap-3">
@@ -23,35 +23,32 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links */}
           <div>
             <h4 className="font-sans text-sm font-semibold uppercase tracking-wider text-primary-foreground/50">
-              Corsi
+              Pagine
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm text-primary-foreground/70">
-              <li><a href="#corsi" className="hover:text-primary-foreground transition-colors">Concorsi Pubblici</a></li>
-              <li><a href="#corsi" className="hover:text-primary-foreground transition-colors">Operatore Informatico</a></li>
-              <li><a href="#corsi" className="hover:text-primary-foreground transition-colors">BLSD</a></li>
-              <li><a href="#corsi" className="hover:text-primary-foreground transition-colors">RSPP</a></li>
-              <li><a href="#corsi" className="hover:text-primary-foreground transition-colors">Tecnico Web</a></li>
+              <li><Link to="/" className="hover:text-primary-foreground transition-colors">Home</Link></li>
+              <li><Link to="/chi-siamo" className="hover:text-primary-foreground transition-colors">Chi Siamo</Link></li>
+              <li><Link to="/corsi" className="hover:text-primary-foreground transition-colors">I Nostri Corsi</Link></li>
+              <li><Link to="/news" className="hover:text-primary-foreground transition-colors">News</Link></li>
+              <li><Link to="/contatti" className="hover:text-primary-foreground transition-colors">Contatti</Link></li>
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h4 className="font-sans text-sm font-semibold uppercase tracking-wider text-primary-foreground/50">
               Servizi
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm text-primary-foreground/70">
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Formazione a Distanza</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Programma GOL</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Percorsi IeFP</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Corsi EIRSAF</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">SAFSS</a></li>
+              <li><span className="hover:text-primary-foreground transition-colors cursor-pointer">Formazione a Distanza</span></li>
+              <li><span className="hover:text-primary-foreground transition-colors cursor-pointer">Programma GOL</span></li>
+              <li><span className="hover:text-primary-foreground transition-colors cursor-pointer">Percorsi IeFP</span></li>
+              <li><span className="hover:text-primary-foreground transition-colors cursor-pointer">Corsi EIPASS</span></li>
+              <li><span className="hover:text-primary-foreground transition-colors cursor-pointer">SAFSS</span></li>
             </ul>
           </div>
 
-          {/* Contacts */}
           <div>
             <h4 className="font-sans text-sm font-semibold uppercase tracking-wider text-primary-foreground/50">
               Contatti
