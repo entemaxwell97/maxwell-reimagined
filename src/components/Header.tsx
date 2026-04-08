@@ -59,12 +59,6 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            <Link
-              to="/contatti"
-              className="ml-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
-            >
-              Iscriviti Ora
-            </Link>
           </nav>
 
           <button
@@ -99,13 +93,6 @@ const Header = () => {
                     {item.label}
                   </Link>
                 ))}
-                <Link
-                  to="/contatti"
-                  onClick={() => setMobileOpen(false)}
-                  className="mt-2 rounded-lg bg-primary px-5 py-3 text-center font-semibold text-primary-foreground"
-                >
-                  Iscriviti Ora
-                </Link>
               </nav>
             </motion.div>
           )}
