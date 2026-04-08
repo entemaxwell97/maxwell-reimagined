@@ -7,6 +7,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import ChiSiamo from "./pages/ChiSiamo";
 import Corsi from "./pages/Corsi";
+import CorsoDetail from "./pages/CorsoDetail";
 import News from "./pages/News";
 import Contatti from "./pages/Contatti";
 import NotFound from "./pages/NotFound";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/chi-siamo" element={<ChiSiamo />} />
           <Route path="/corsi" element={<Corsi />} />
+          <Route path="/corsi/:slug" element={<CorsoDetail />} />
           <Route path="/news" element={<News />} />
           <Route path="/contatti" element={<Contatti />} />
           <Route path="*" element={<NotFound />} />
