@@ -1,6 +1,11 @@
 import { BookOpen, Monitor, Heart, Shield, Cpu, Globe, Zap, PenTool, Award, Box } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
 export interface Course {
   slug: string;
   icon: LucideIcon;
@@ -14,6 +19,9 @@ export interface Course {
   titoloDiStudio: string;
   description: string[];
   competenze?: string[];
+  perche?: string[];
+  destinatari?: string[];
+  faq?: FAQ[];
 }
 
 export const courses: Course[] = [
@@ -21,24 +29,46 @@ export const courses: Course[] = [
     slug: "masterclass-bim-specialist",
     icon: Box,
     title: "Masterclass BIM Specialist",
-    shortDescription: "Corso avanzato per diventare BIM Specialist. Acquisizione di competenze nella modellazione informativa degli edifici con metodologia BIM.",
+    shortDescription: "Il percorso per acquisire competenze BIM solide, certificabili e spendibili nei contesti professionali più evoluti.",
     tag: "Nuovo",
     category: "Informatica",
-    durata: "Da definire",
+    durata: "Oltre 110 ore",
     stage: "No",
-    esamefinale: "Sì",
+    esamefinale: "Sì – Attestato Autodesk Revit",
     titoloDiStudio: "Diploma",
     description: [
-      "Il corso Masterclass BIM Specialist è un percorso avanzato per diventare esperti nella modellazione informativa degli edifici utilizzando la metodologia BIM (Building Information Modeling).",
-      "Il BIM rappresenta una delle innovazioni più importanti nel settore dell'edilizia e dell'ingegneria, permettendo la creazione di modelli digitali tridimensionali completi di tutte le informazioni necessarie per la progettazione, costruzione e gestione degli edifici.",
-      "Il corso fornisce competenze pratiche nell'utilizzo dei principali software BIM e nella gestione dei processi collaborativi tipici della metodologia BIM.",
+      "Un percorso pensato per chi vuole andare oltre l'uso base del software e sviluppare una competenza BIM strutturata, applicabile nella pratica professionale, nella produzione di elaborati, nella gestione dei dati e nella comprensione del quadro normativo.",
+      "Il percorso per acquisire competenze BIM solide, certificabili e spendibili nei contesti professionali più evoluti.",
     ],
     competenze: [
-      "Modellazione 3D con software BIM",
-      "Gestione del modello informativo",
-      "Coordinamento interdisciplinare",
-      "Analisi e verifica dei modelli",
-      "Gestione dei processi BIM",
+      "Modellazione BIM con Revit e gestione dei flussi di lavoro",
+      "Produzione di documentazione ed elaborati professionali",
+      "Gestione di famiglie, output e dati informativi",
+      "Normativa BIM nazionale e internazionale (CI, OGI, PGI)",
+      "Rapporto con la Pubblica Amministrazione e contesti strutturati",
+    ],
+    perche: [
+      "Approccio operativo – Non solo teoria, ma utilizzo reale di Revit e dei flussi di lavoro BIM.",
+      "Profilo professionale più forte – Il corso aiuta a rendere il proprio CV e la propria posizione professionale più qualificata per incarichi, bandi e contesti strutturati.",
+      "Percorso completo – Dall'ambiente BIM alla modellazione, fino a documentazione, famiglie, output e normativa.",
+      "Spendibilità concreta – Competenze utili per studio professionale, collaborazione tecnica, concorsi, pubblica amministrazione e percorsi di certificazione.",
+    ],
+    destinatari: [
+      "Architetti",
+      "Ingegneri",
+      "Geometri e tecnici",
+      "Studenti e neolaureati",
+      "Professionisti che vogliono aggiornarsi sul BIM",
+    ],
+    faq: [
+      { question: "Serve già conoscere Revit?", answer: "Dipende dal livello richiesto, ma il percorso accompagna progressivamente verso una padronanza più strutturata dell'ambiente BIM." },
+      { question: "Il corso è solo teorico?", answer: "No, il programma comprende aspetti operativi, modellazione, documentazione, famiglie, output e normativa." },
+      { question: "Quante ore di formazione sono previste?", answer: "Sono previste oltre 110 ore di formazione." },
+      { question: "È previsto un attestato?", answer: "Sì, il volantino indica Attestato Autodesk – Revit." },
+      { question: "Sono previsti crediti formativi professionali?", answer: "Sì, sono previsti crediti formativi professionali." },
+      { question: "Cosa significa selezione su candidatura?", answer: "L'accesso avviene previa candidatura e valutazione, anche in funzione dei posti disponibili." },
+      { question: "Il piano didattico include anche normativa BIM?", answer: "Sì, una competenza specifica è dedicata alla normativa nazionale e internazionale, oltre a CI, OGI, PGI e rapporto con la Pubblica Amministrazione." },
+      { question: "Come faccio a iscrivermi?", answer: "Compilando il modulo di iscrizione e inviandolo via mail all'ente (info@entemaxwell.it). Attendere la conferma dell'iscrizione e in caso positivo recarsi presso l'ente per completare l'iscrizione." },
     ],
   },
   {
