@@ -20,11 +20,13 @@ const CoursesSection = () => {
                 to={`/corsi/${course.slug}`}
                 className="group relative flex flex-col h-full rounded-xl border border-border bg-card p-6 shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
               >
-                <span className="absolute right-4 top-4 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
-                  {course.tag}
-                </span>
-                <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <course.icon className="h-6 w-6" />
+                <div className="flex items-start justify-between mb-4">
+                  <div className="inline-flex rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <course.icon className="h-6 w-6" />
+                  </div>
+                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                    {course.tag}
+                  </span>
                 </div>
                 <h3 className="font-sans text-lg font-semibold text-card-foreground">
                   {course.title}
