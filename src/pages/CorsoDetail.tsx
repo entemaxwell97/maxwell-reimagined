@@ -1,9 +1,10 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Clock, GraduationCap, FileCheck, BookOpen, ArrowLeft, CheckCircle2, Phone } from "lucide-react";
+import { Clock, GraduationCap, FileCheck, BookOpen, ArrowLeft, CheckCircle2, Phone, Users, HelpCircle, ChevronDown, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { courses } from "@/data/courses";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const CorsoDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -59,8 +60,9 @@ const CorsoDetail = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-2 space-y-8"
+            className="lg:col-span-2 space-y-10"
           >
+            {/* Descrizione */}
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-4">Descrizione del Corso</h2>
               <div className="space-y-4">
@@ -70,6 +72,31 @@ const CorsoDetail = () => {
               </div>
             </div>
 
+            {/* Perché scegliere */}
+            {course.perche && course.perche.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Perché scegliere questo corso</h2>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {course.perche.map((item, i) => {
+                    const [titolo, ...resto] = item.split(" – ");
+                    const desc = resto.join(" – ");
+                    return (
+                      <div key={i} className="rounded-xl border border-border bg-card p-5 shadow-card">
+                        <div className="flex items-start gap-3">
+                          <Star className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                          <div>
+                            <h4 className="font-semibold text-foreground">{titolo}</h4>
+                            {desc && <p className="mt-1 text-sm text-muted-foreground">{desc}</p>}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Competenze */}
             {course.competenze && (
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-4">Competenze Acquisite</h2>
@@ -81,6 +108,47 @@ const CorsoDetail = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+            )}
+
+            {/* Destinatari */}
+            {course.destinatari && course.destinatari.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-4">A chi è rivolto</h2>
+                <div className="flex flex-wrap gap-3">
+                  {course.destinatari.map((d, i) => (
+                    <span
+                      key={i}
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-sm"
+                    >
+                      <Users className="h-4 w-4 text-primary" />
+                      {d}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* FAQ */}
+            {course.faq && course.faq.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-4">Domande Frequenti</h2>
+                <Accordion type="single" collapsible className="space-y-2">
+                  {course.faq.map((item, i) => (
+                    <AccordionItem
+                      key={i}
+                      value={`faq-${i}`}
+                      className="rounded-xl border border-border bg-card px-5 shadow-sm"
+                    >
+                      <AccordionTrigger className="text-left text-foreground font-medium hover:no-underline">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </div>
             )}
 
