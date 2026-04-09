@@ -18,13 +18,13 @@ const CoursesSection = () => {
             >
               <Link
                 to={`/corsi/${course.slug}`}
-                className="group relative flex flex-col h-full rounded-xl border border-border bg-card p-6 shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
+                className="group relative flex flex-col h-full min-h-[280px] rounded-xl border border-border bg-card p-7 shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
               >
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex items-start justify-between mb-5">
                   <div className="inline-flex rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <course.icon className="h-6 w-6" />
                   </div>
-                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                  <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                     {course.tag}
                   </span>
                 </div>
@@ -34,7 +34,7 @@ const CoursesSection = () => {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {course.shortDescription}
                 </p>
-                <div className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
                   Scopri di più <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </Link>
