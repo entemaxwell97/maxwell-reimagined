@@ -11,6 +11,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/contatti/page.js"
     ],
+    "/corsi/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/corsi/[slug]/page.js"
+    ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
