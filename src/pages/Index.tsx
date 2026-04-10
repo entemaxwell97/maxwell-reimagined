@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Users, Award, GraduationCap, CheckCircle2, Phone, Mail, MapPin, Star } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -44,6 +45,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Formazione Professionale Napoli"
+        description="Ente di Formazione Professionale Maxwell a Napoli. Corsi accreditati dalla Regione Campania: informatica, sicurezza, lingue, sanitario, scienze sociali e molto altro."
+        path="/"
+      />
       <Header />
       <HeroSection />
 

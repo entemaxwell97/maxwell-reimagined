@@ -1,12 +1,18 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import SEO from "@/components/SEO";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Contatti = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Contatti"
+        description="Contatta l'Ente di Formazione Professionale Maxwell a Napoli. Via G. A. Campano 105, telefono 081-5854334, email info@entemaxwell.it."
+        path="/contatti"
+      />
       <Header />
       <PageHero title="Contatti" breadcrumb="Contatti" />
 
