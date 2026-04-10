@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+'use client';
+
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface PageHeroProps {
@@ -17,7 +19,7 @@ const PageHero = ({ title, breadcrumb }: PageHeroProps) => {
         >
           <h1 className="text-3xl font-bold text-primary-foreground sm:text-4xl">{title}</h1>
           <nav className="mt-3 text-sm text-primary-foreground/70">
-            <Link to="/" className="hover:text-primary-foreground transition-colors">Home</Link>
+            <Link href="/" className="hover:text-primary-foreground transition-colors">Home</Link>
             <span className="mx-2">›</span>
             <span className="text-primary-foreground">{breadcrumb}</span>
           </nav>

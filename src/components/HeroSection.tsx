@@ -1,13 +1,16 @@
+'use client';
+
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import heroBg from "@/assets/hero-bg.jpg";
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="h-full w-full object-cover" />
+        <Image src={heroBg} alt="" className="h-full w-full object-cover" fill priority />
         <div className="absolute inset-0 hero-gradient opacity-85" />
       </div>
 
@@ -50,14 +53,14 @@ const HeroSection = () => {
             className="mt-8 flex flex-wrap gap-4"
           >
             <Link
-              to="/corsi"
+              href="/corsi/"
               className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-accent-foreground transition-all hover:brightness-110"
             >
               Scopri i Corsi
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/contatti"
+              href="/contatti/"
               className="inline-flex items-center gap-2 rounded-lg border border-primary-foreground/30 px-6 py-3.5 font-semibold text-primary-foreground backdrop-blur-sm transition-all hover:bg-primary-foreground/10"
             >
               Contattaci

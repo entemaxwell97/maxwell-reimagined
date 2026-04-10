@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, Facebook, Linkedin } from "lucide-react";
 import maxwellLogo from "@/assets/maxwell-logo.png";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <img src={maxwellLogo} alt="Ente Maxwell" className="h-12 brightness-0 invert" />
+            <Image src={maxwellLogo} alt="Ente Maxwell" className="h-12 w-auto brightness-0 invert" width={48} height={48} />
             <p className="mt-4 text-sm leading-relaxed text-primary-foreground/70">
               Ente di Formazione Professionale accreditato dalla Regione Campania.
               Dal 1990 formiamo professionisti qualificati.
@@ -28,11 +29,10 @@ const Footer = () => {
               Pagine
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm text-primary-foreground/70">
-              <li><Link to="/" className="hover:text-primary-foreground transition-colors">Home</Link></li>
-              <li><Link to="/chi-siamo" className="hover:text-primary-foreground transition-colors">Chi Siamo</Link></li>
-              <li><Link to="/corsi" className="hover:text-primary-foreground transition-colors">I Nostri Corsi</Link></li>
-              <li><Link to="/news" className="hover:text-primary-foreground transition-colors">News</Link></li>
-              <li><Link to="/contatti" className="hover:text-primary-foreground transition-colors">Contatti</Link></li>
+              <li><Link href="/" className="hover:text-primary-foreground transition-colors">Home</Link></li>
+              <li><Link href="/chi-siamo/" className="hover:text-primary-foreground transition-colors">Chi Siamo</Link></li>
+              <li><Link href="/corsi/" className="hover:text-primary-foreground transition-colors">I Nostri Corsi</Link></li>
+              <li><Link href="/contatti/" className="hover:text-primary-foreground transition-colors">Contatti</Link></li>
             </ul>
           </div>
 

@@ -1,5 +1,7 @@
+'use client';
+
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { CircleCheck as CheckCircle } from "lucide-react";
 
 const features = [
   "Ente accreditato dalla Regione Campania",

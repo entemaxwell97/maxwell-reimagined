@@ -1,5 +1,7 @@
+'use client';
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { courses } from "@/data/courses";
 
@@ -17,7 +19,7 @@ const CoursesSection = () => {
               transition={{ duration: 0.4, delay: i * 0.06 }}
             >
               <Link
-                to={`/corsi/${course.slug}`}
+                href={`/corsi/${course.slug}/`}
                 className="group relative flex flex-col h-full min-h-[280px] rounded-xl border border-border bg-card p-7 shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
               >
                 <div className="flex items-start justify-between mb-5">

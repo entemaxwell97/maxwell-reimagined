@@ -1,21 +1,24 @@
+'use client';
+
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import maxwellLogo from "@/assets/maxwell-logo.png";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Chi Siamo", href: "/chi-siamo" },
-  { label: "Corsi", href: "/corsi" },
-  { label: "News", href: "/news" },
-  { label: "Contatti", href: "/contatti" },
+  { label: "Chi Siamo", href: "/chi-siamo/" },
+  { label: "Corsi", href: "/corsi/" },
+  { label: "Contatti", href: "/contatti/" },
 ];
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   return (
     <>
@@ -40,18 +43,18 @@ const Header = () => {
 
       <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-md">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={maxwellLogo} alt="Ente Maxwell" className="h-12" />
+          <Link href="/" className="flex items-center gap-2">
+            <Image src={maxwellLogo} alt="Ente Maxwell" className="h-12 w-auto" width={48} height={48} />
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.label}
-                to={item.href}
+                href={item.href}
                 className={cn(
                   "px-4 py-2 rounded-md text-sm font-medium transition-colors hover:text-primary hover:bg-primary/5",
-                  location.pathname === item.href
+                  pathname === item.href
                     ? "text-primary bg-primary/5"
                     : "text-foreground/80"
                 )}
@@ -81,11 +84,11 @@ const Header = () => {
                 {navItems.map((item) => (
                   <Link
                     key={item.label}
-                    to={item.href}
+                    href={item.href}
                     onClick={() => setMobileOpen(false)}
                     className={cn(
                       "rounded-md px-4 py-3 transition-colors hover:bg-primary/5 hover:text-primary",
-                      location.pathname === item.href
+                      pathname === item.href
                         ? "text-primary bg-primary/5"
                         : "text-foreground/80"
                     )}

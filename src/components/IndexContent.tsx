@@ -1,9 +1,8 @@
-import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
+'use client';
+
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Users, Award, GraduationCap, CheckCircle2, Phone, Mail, MapPin, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, BookOpen, Users, Award, GraduationCap, CircleCheck as CheckCircle2, Phone, Mail, MapPin, Star } from "lucide-react";
+import Link from "next/link";
 import { courses } from "@/data/courses";
 
 const highlights = [
@@ -39,15 +38,11 @@ const testimonials = [
   },
 ];
 
-const Index = () => {
+const IndexContent = () => {
   const featuredCourses = courses.slice(0, 6);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <HeroSection />
-
-      {/* Quick intro */}
+    <>
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -81,7 +76,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured courses */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
@@ -105,7 +99,7 @@ const Index = () => {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
                 <Link
-                  to={`/corsi/${course.slug}`}
+                  href={`/corsi/${course.slug}/`}
                   className="group relative flex flex-col h-full min-h-[280px] rounded-xl border border-border bg-card p-7 shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
                 >
                   <div className="flex items-start justify-between mb-5">
@@ -131,7 +125,7 @@ const Index = () => {
           </div>
           <div className="mt-10 text-center">
             <Link
-              to="/corsi"
+              href="/corsi/"
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all hover:opacity-90"
             >
               <BookOpen className="h-4 w-4" />
@@ -142,7 +136,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why us – features checklist */}
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
@@ -176,7 +169,7 @@ const Index = () => {
               </ul>
               <div className="mt-8">
                 <Link
-                  to="/chi-siamo"
+                  href="/chi-siamo/"
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 font-semibold text-foreground transition-all hover:bg-muted"
                 >
                   Scopri di più su di noi
@@ -211,7 +204,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
@@ -253,7 +245,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-20 hero-gradient">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -269,14 +260,14 @@ const Index = () => {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
-                to="/contatti"
+                href="/contatti/"
                 className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-accent-foreground transition-all hover:brightness-110"
               >
                 <Phone className="h-4 w-4" />
                 Contattaci Ora
               </Link>
               <Link
-                to="/corsi"
+                href="/corsi/"
                 className="inline-flex items-center gap-2 rounded-lg border border-primary-foreground/30 px-6 py-3.5 font-semibold text-primary-foreground transition-all hover:bg-primary-foreground/10"
               >
                 <BookOpen className="h-4 w-4" />
@@ -297,10 +288,8 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 
-export default Index;
+export default IndexContent;
