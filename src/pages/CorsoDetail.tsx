@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Clock, GraduationCap, FileCheck, BookOpen, ArrowLeft, CheckCircle2, Phone, Users, HelpCircle, ChevronDown, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { courses } from "@/data/courses";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -21,6 +22,11 @@ const CorsoDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={course.title}
+        description={course.shortDescription}
+        path={`/corsi/${course.slug}`}
+      />
       <Header />
 
       {/* Hero */}
